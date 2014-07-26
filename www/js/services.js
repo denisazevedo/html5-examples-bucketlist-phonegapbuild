@@ -1,7 +1,6 @@
 angular.module('bucketList.services', [])
     .factory('API', function ($rootScope, $http, $ionicLoading, $window) {
        var base = "http://examples-bucketlist.herokuapp.com";
-       //var base = "http://localhost:9804";
         $rootScope.show = function (text) {
             $rootScope.loading = $ionicLoading.show({
                 content: text ? text : 'Loading',
@@ -13,7 +12,7 @@ angular.module('bucketList.services', [])
         };
 
         $rootScope.hide = function () {
-            $ionicLoading.hide();
+            $rootScope.loading.hide();
         };
 
         $rootScope.logout = function () {
